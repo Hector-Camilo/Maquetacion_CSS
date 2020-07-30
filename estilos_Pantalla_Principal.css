@@ -1,0 +1,191 @@
+
+        body{
+            background-color: #8f57fd;
+            font-family: 'Mulish', sans-serif;
+            margin: 0px;/*Estoy seleccionando el elemento body y le estoy quitando el margen que trae por defecto*/
+        }
+        .header{       
+            width: 100%;/*Dedicmos que el ancho sera el 100% de nuestra pantalla*/
+            height: 80px; 
+            display: flex;
+            justify-content: space-between;/*Justificamos contenido primer articulo al inicio , segun artiuclo al final de linea*/           
+            align-items: center;  
+        }
+        .header__img{
+            width: 200px; /*Tamaño en pixeles de la imagen que importe*/
+            margin-top: 10px;
+            margin-left: 10px;  
+        }
+        .header__menu{  
+            margin-right: 15px;  
+        }
+        .header__menu img{ 
+            width: 50px; 
+        }
+        .header__menu ul{
+           display: none; /*Tipo de display que no me muestra nada en el body, pero existe en el DOM*/
+           list-style: none;/*Quito los estilos de mi lista */
+           padding: 0px;
+           position:absolute; 
+           width: 100px;  
+           text-align:right;/*Comando para liniar texto*/  
+           margin: 0px 0px 0px -4px;      
+        }
+        .header__menu:hover ul, ul:hover {/*Cuando el mouse este sobre el elemento al que apunta esa clase voy a mostrar el elemento ul, y cambio el valor de su display de none a block*/
+            display:block; 
+        } 
+        .header__menu li{ 
+            margin: 10px 0px; 
+        }
+        .header__menu li a{
+            color:white;
+            text-decoration: none;
+        }
+        .header__menu li a:hover{/*Cuando pase el mouse por el elemento "a" que esta anidado con el elemento "li" y a su vez con la clase .header__menu */
+            text-decoration:underline; /*adicionele el estilo de la linea abajo*/
+        }
+        .header__menu--profile{
+            display:flex;
+            align-items: center;
+            
+        }
+        .header__menu--profile p{
+            color: white;
+            margin: 13px 5px 0px 8px; 
+        }
+        .main{
+            height: 300px; 
+        }
+        .main__title{ 
+            color:white;
+            font-size: 25px;
+            text-align: center;
+        }
+        .main__input{
+            background-color: #AB88FF; 
+            border: 2px solid white;
+            border-radius: 500px;
+            color: white;
+            font-size: 16px;
+            height: 50px;
+            padding: 0px 20px;
+            width: 70%;
+            outline-style: none;
+            margin-left: 13%; 
+        } 
+        ::placeholder{
+            color: white;
+        } 
+        .categories__title{
+            color: white;
+            font-size: 22px;
+            position: absolute;
+            padding-left: 30px;
+            width: 100%;
+        } 
+        
+        .carousel{
+            width:100%;
+            overflow:hidden; 
+            padding-left: 30px;    
+            position: relative;/* position: relative;Decimos que todos los elementos de este contenedor se van a posicionar de manera relativa al elemento padre */
+        }
+        .carousel__container{
+            white-space: nowrap;/*Propiedad de no envoltura */
+            margin: 70px 0px;
+            padding-bottom: 10px;
+        }
+        .carousel-item{
+            background-color: palevioletred;
+            width: 200px; 
+            height:250px; 
+            border-radius: 20px;
+            overflow: hidden;
+            margin-right: 10px;
+            display: inline-block;
+            cursor: pointer; 
+            transition: 450ms all;  
+            transform-origin: center left;/*Define el origen de las trnasformacion de un elemento*/
+            position: relative;
+        }
+        .carousel-item:hover ~ .carousel-item{/*Cuando hago hover sobre el primer elemento afecto todos los otros items que estan despues del primero */
+        transform: translate3d(100px, 0 ,0); 
+        }
+        .carousel__container:hover .carousel-item{/*Selector desendiente que afecta todos los elementos hijos dentro del contenedor padre*/
+            opacity: 0.3;
+        }
+        .carousel__container:hover .carousel-item:hover{
+            transform: scale(1.5);
+            opacity: 1;
+        }
+        .carousel-item__img{
+            width: 200px;
+            height: 250px;
+            object-fit: cover;  
+        } 
+        .carousel-item__details{ 
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0,0,0,0.65) 100%); 
+            color: white;
+            font-size: 10px;  
+            opacity: 0; 
+            transition: 450ms opacity;         
+            padding:10px; 
+            position:absolute;   
+            top: 180px;   
+            left:0px; 
+            right:0px;    
+            bottom: 0px;          
+        }
+        
+        .carousel-item__details--imgplay{  
+            width: 25px; 
+        }
+
+        .carousel-item__details--imgadd{
+            width: 25px;
+        }
+        .carousel-item:hover .carousel-item__details{
+            opacity: 1;       
+        }
+        .carousel-item__details--title{
+            margin-bottom: -10px; 
+        }
+        .carousel-item__details--subtitle{
+            margin:-7px -7px -7px 0px;
+            padding: 0px;         
+        }    
+ 
+
+
+        .footer{
+            background-color:#8f57fd ;   
+            display: flex; 
+            align-items: center;
+            height: 100px;
+            width: 100%;
+        }
+        .footer > a{
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            font-family: 'Mulish', sans-serif;
+            padding-left: 30px;
+            text-decoration: none;
+            }
+            .footer > a:hover{
+                text-decoration: underline;   
+           }  
+           @media only screen and (max-width:900px){
+               .login__container{
+                   background-color: transparent;
+                   border: none;
+                   padding: 0px;
+                   width: 100%;  
+               }
+               
+               .footer{
+                   align-items: flex-start;
+                   flex-direction: column;
+               } 
+           }
+       
